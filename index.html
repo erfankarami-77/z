@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معرفی | دنیای صورتی</title>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+
+<style>
+  /* ============ CSS ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background-color: #fff9fb;
+    color: #333;
+    line-height: 1.8;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* هدر */
+  .hero {
+    background: linear-gradient(135deg, #ffe4ec 0%, #ffffff 100%);
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 2px dashed #ffb6c1;
+  }
+  .hero h1 { font-size: 3rem; color: #d63384; margin-bottom: 20px; }
+  .hero .highlight { color: #ff69b4; text-decoration: underline wavy #ffb6c1; }
+  .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 30px; }
+  .btn {
+    display: inline-block; background-color: #ff69b4; color: #fff;
+    padding: 12px 30px; border-radius: 25px; text-decoration: none;
+    font-weight: bold; transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(255,105,180,.3);
+  }
+  .btn:hover { background-color: #d63384; transform: translateY(-3px); }
+
+  /* ویژگی‌ها */
+  .features { padding: 80px 0; background: #fff; }
+  .features h2, .gallery-section h2 {
+    text-align: center; font-size: 2.2rem; color: #d63384; margin-bottom: 50px;
+  }
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 30px;
+  }
+  .feature-card {
+    background: #fff; border: 2px solid #ffe4ec; padding: 30px;
+    border-radius: 20px; text-align: center; transition: all .3s ease;
+    box-shadow: 0 5px 15px rgba(255,182,193,.1);
+  }
+  .feature-card:hover {
+    transform: translateY(-10px); border-color: #ffb6c1;
+    box-shadow: 0 15px 30px rgba(255,105,180,.2);
+  }
+  .feature-card .icon { font-size: 3rem; margin-bottom: 15px; }
+  .feature-card h3 { color: #ff69b4; margin-bottom: 10px; }
+  .feature-card p { color: #777; font-size: .95rem; }
+
+  /* اسلایدر */
+  .gallery-section { padding: 80px 0; background: #fff9fb; }
+  .slider-container {
+    position: relative; max-width: 800px; margin: 0 auto;
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255,105,180,.2); border: 5px solid #fff;
+  }
+  .slider { position: relative; width: 100%; height: 500px; }
+  .slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; transition: opacity .5s ease-in-out;
+  }
+  .slide.active { opacity: 1; z-index: 1; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+  .prev, .next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,105,180,.85); color: #fff; border: none;
+    padding: 14px 18px; font-size: 1.4rem; cursor: pointer; z-index: 10;
+    border-radius: 50%; transition: background .3s;
+  }
+  .prev:hover, .next:hover { background: #d63384; }
+  .prev { right: 15px; }
+  .next { left: 15px; }
+
+  .dots-container {
+    position: absolute; bottom: 15px; width: 100%; text-align: center; z-index: 10;
+  }
+  .dot {
+    cursor: pointer; height: 14px; width: 14px; margin: 0 5px;
+    background: rgba(255,255,255,.5); border: 2px solid #ff69b4;
+    border-radius: 50%; display: inline-block; transition: background .3s;
+  }
+  .dot.active { background: #ff69b4; }
+
+  footer {
+    background: #ff69b4; color: #fff; text-align: center;
+    padding: 20px 0; font-size: .9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .slider { height: 320px; }
+    .prev, .next { padding: 10px 14px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- هدر -->
+  <header class="hero">
+    <div class="container">
+      <h1>سلام، من <span class="highlight">زهرا</span> هستم</h1>
+      <p class="subtitle">عاشق هنر، طراحی و لحظه‌های شیرین زندگی</p>
+      <a href="#features" class="btn">بیشتر بشناس</a>
+    </div>
+  </header>
+
+  <!-- ویژگی‌ها -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>ویژگی‌های من</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon">🎨</div>
+          <h3>خلاق و هنرمند</h3>
+          <p>عاشق نقاشی و طراحی گرافیک. همیشه دنبال ایده‌های جدید و رنگ‌های شاد.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📚</div>
+          <h3>کتاب‌خوان</h3>
+          <p>عاشق رمان‌های عاشقانه و کتاب‌های روانشناسی. کتاب بهترین دوست من است.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">☕</div>
+          <h3>عاشق قهوه</h3>
+          <p>یک فنجان لاته با شیر و کیک شکلاتی، بهترین ترکیب برای شروع روز من است.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">✈️</div>
+          <h3>ماجراجو</h3>
+          <p>عاشق سفر و کشف مکان‌های جدید. عکاسی از طبیعت و خیابان‌های قدیمی.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- اسلایدر عکس -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2>گالری تصاویر</h2>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide active">
+            <img src="Screenshot 2026-11-06 013735.png" alt="عکس ۱">
+          </div>
+          <div class="slide">
+            <img src="Screenshot 2026-11-06 013931.png" alt="عکس ۲">
+          </div>
+          <div class="slide">
+            <img src="Screenshot_۲۰۲۶۰۸۰۲_۲۲۳۸۳۶_Gallery.jpg" alt="عکس ۳">
+          </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="dots-container">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>ساخته شده با عشق برای زیبا ترین دختر دنیا</p>
+  </footer>
+
+<script>
+  /* ============ JavaScript ============ */
+  var slideIndex = 1;
+  var slideInterval;
+
+  function showSlides(n) {
+    var slides = document.querySelectorAll(".slide");
+    var dots = document.querySelectorAll(".dot");
+
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+      dots[i].classList.remove("active");
+    }
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+  }
+
+  function changeSlide(n) {
+    clearInterval(slideInterval);
+    showSlides(slideIndex += n);
+    startAutoPlay();
+  }
+
+  function currentSlide(n) {
+    clearInterval(slideInterval);
+    showSlides(slideIndex = n);
+    startAutoPlay();
+  }
+
+  function startAutoPlay() {
+    slideInterval = setInterval(function () {
+      slideIndex++;
+      showSlides(slideIndex);
+    }, 4000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    showSlides(slideIndex);
+    startAutoPlay();
+  });
+</script>
+</body>
+</html>ذ
